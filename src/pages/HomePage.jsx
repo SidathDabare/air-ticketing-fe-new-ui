@@ -10,9 +10,11 @@ const HomePage = () => {
   return (
     <div className='home-div-main'>
       <MyNavbar />
-      <Container className='home-div-content'>
-        <h1>HOME</h1>
-      </Container>
+      <div className='home-div-container'>
+        <Container className='home-div-content'>
+          <h1>HOME</h1>
+        </Container>
+      </div>
       <Footer />
     </div>
   )

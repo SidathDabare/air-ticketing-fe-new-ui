@@ -1,12 +1,16 @@
 /** @format */
 :root {
+  --body-bg-color: #141414;
   --font-color: #e4e4e4;
   --font-hover-color: #ffffff;
+  --nav-color: #010f23;
+  --nav-menu-color: #000c18;
 }
 .navbar-div-main {
+  position: fixed;
   width: 100%;
   height: 55px;
-  background-color: #101214;
+  background-color: var(--nav-color);
 }
 .navbar-div-container {
   display: flex;
@@ -33,6 +37,13 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+.nav-menu a {
+  color: var(--font-color);
+}
+.nav-menu a:hover {
+  text-decoration: none;
+  color: var(--font-hover-color);
 }
 .user-profile {
   width: 30%;
@@ -66,13 +77,27 @@
   top: 0;
   bottom: 0;
 }
+.menu-profile-image {
+  width: 52px;
+  height: 52px;
+  min-height: 52px;
+  border-radius: 50%;
+}
 .user-profile-details-hide {
+  display: none;
+}
+.user-profile-details-show {
   width: 300px;
-  height: 400px;
-
+  height: 200px;
   position: absolute;
+  display: block;
   right: 0;
+  z-index: 1;
   top: 55px;
+  border-radius: 0 0 4px 4px;
+  background-color: var(--nav-menu-color);
+  -webkit-box-shadow: -1px 5px 11px -4px #070707;
+  box-shadow: -1px 5px 11px -4px #070707;
 }
 .toggle-btn {
   display: none;
@@ -80,25 +105,25 @@
 }
 .line1 {
   height: 1.2px;
-  background-color: rgb(255, 255, 255);
+  background-color: var(--font-color);
   margin: 5px 0 5px 0;
   cursor: pointer;
 }
 .line2 {
   height: 1.2px;
-  background-color: white;
+  background-color: var(--font-color);
   margin: 5px 0 5px 7px;
   transition: 0.5s ease-in-out;
 }
 .toggle-btn:hover .line2 {
   height: 1.2px;
-  background-color: white;
+  background-color: var(--font-color);
   margin: 5px 0 5px 0;
   transition: 0.5s ease-in-out;
 }
 .line3 {
   height: 1.2px;
-  background-color: white;
+  background-color: var(--font-color);
   margin: 5px 0 5px 0;
 }
 .profile-toggle-btn {
@@ -160,8 +185,8 @@
   .nav-menu-small {
     display: block;
     width: 100%;
-    height: 90vh;
-    background-color: aqua;
+    height: 92vh;
+    background-color: var(--nav-menu-color);
     position: absolute;
   }
   .hide-nav-menu {

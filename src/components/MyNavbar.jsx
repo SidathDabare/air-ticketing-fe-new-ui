@@ -1,7 +1,7 @@
 /** @format */
 
 import React from "react"
-import { Container } from "react-bootstrap"
+import { Button, Container } from "react-bootstrap"
 import "../style/MyNavbar.css"
 import BigLogo from "../assets/logo.png"
 import { Link } from "react-router-dom"
@@ -42,7 +42,7 @@ const MyNavbar = () => {
                   <img
                     src={loggedUser.avatar}
                     alt=''
-                    className='profile-image '
+                    className='profile-image'
                   />
                 </div>{" "}
                 <span className='text-truncate'>
@@ -70,8 +70,38 @@ const MyNavbar = () => {
 
             <div
               className={
-                showUserProfile ? "user-profile-details-hide" : "d-none"
-              }></div>
+                showUserProfile
+                  ? "user-profile-details-hide"
+                  : "user-profile-details-show"
+              }>
+              <div className='col-12 d-flex p-2'>
+                <div className='col-3'>
+                  <img
+                    src={loggedUser.avatar}
+                    alt=''
+                    className='menu-profile-image'
+                  />
+                </div>
+                <div className='col-9 d-flex justify-content-center align-items-start flex-column'>
+                  <h6 className='text-truncate mb-0'>
+                    {" "}
+                    {loggedUser.firstName} {loggedUser.lastName}
+                  </h6>
+
+                  <small>{loggedUser.email}</small>
+                </div>
+              </div>
+              <div className='col-12 py-2'>
+                <small>User role : {loggedUser.role}</small>
+              </div>
+              <div className='col-12'>
+                <Button
+                  type='button'
+                  className='btn btn-outline-info btn-block'>
+                  LOG OUT
+                </Button>
+              </div>
+            </div>
           </div>
         </div>
         <div
