@@ -5,14 +5,21 @@ import "../style/HomePage.css"
 import { Container } from "react-bootstrap"
 import Footer from "../components/Footer"
 import MyNavbar from "../components/MyNavbar"
+import SearchComponent from "../components/SearchComponent"
 
 const HomePage = () => {
   return (
     <div className='home-div-main'>
       <MyNavbar />
       <div className='home-div-container'>
+        <div className='HomeHeaderComponent'>
+          <div className='home-header-overlay'></div>
+          <Container className='text-white home-header-content px-2'>
+            <h1>NEED A TICKET?</h1>
+          </Container>
+        </div>
         <Container className='home-div-content'>
-          <h1>HOME</h1>
+          <SearchComponent />
         </Container>
       </div>
       <Footer />

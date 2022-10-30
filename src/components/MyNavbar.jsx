@@ -3,7 +3,7 @@
 import React from "react"
 import { Button, Container } from "react-bootstrap"
 import "../style/MyNavbar.css"
-import BigLogo from "../assets/logo.png"
+import BigLogo from "../assets/logo1.png"
 import { Link } from "react-router-dom"
 import { useSelector } from "react-redux"
 import { useState } from "react"
@@ -70,7 +70,7 @@ const MyNavbar = () => {
 
             <div
               className={
-                showUserProfile
+                !showUserProfile
                   ? "user-profile-details-hide"
                   : "user-profile-details-show"
               }>
@@ -94,12 +94,10 @@ const MyNavbar = () => {
               <div className='col-12 py-2'>
                 <small>User role : {loggedUser.role}</small>
               </div>
-              <div className='col-12'>
-                <Button
-                  type='button'
-                  className='btn btn-outline-info btn-block'>
+              <div className='col-12 mb-auto'>
+                <button className='btn btn-outline-info btn-block'>
                   LOG OUT
-                </Button>
+                </button>
               </div>
             </div>
           </div>
